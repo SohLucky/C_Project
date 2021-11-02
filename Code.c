@@ -57,19 +57,20 @@ int main()
     struct NameCard CardHolder1[MAX];
     // Menu
     printf("NTU NAME CARD HOLDER MANAGEMENT PROGRAM:\n");
-    printf("1:listNameCards()\n");
-    printf("2:addNameCard()\n");
-    printf("3:removeNameCard()\n");
-    printf("4:getNameCard()\n");
-    printf("5:quit()\n");
+    printf("1: listNameCards()\n");
+    printf("2: addNameCard()\n");
+    printf("3: removeNameCard()\n");
+    printf("4: getNameCard()\n");
+    printf("5: quit\n");
     do{
-        printf("Enter your choice:");
+        printf("Enter your choice:\n");
         scanf("%d", &choice);
         switch (choice)
         {
         case 1:;
         // Printing in reverse order
             int i;
+            printf("listNameCards():\n");
             if (num_of_items == 0)
                 printf("The name card holder is empty\n");
             else
@@ -87,7 +88,7 @@ int main()
             char p_name[NAME_MAX], c_name[NAME_MAX];
             bool error = false;
             
-            printf("listNameCards():\n");
+            printf("addNameCard():\n");
             printf("Enter nameCardID:\n");
             //fflush(stdin);
             scanf("\n"); // Removes "\n" from the buffer
@@ -132,6 +133,7 @@ int main()
             char remove_name[NAME_MAX], lower_pname[NAME_MAX];
             bool exists = true;
 
+            printf("removeNameCard():\n");
             printf("Enter personName:\n");
             scanf("\n"); // Removes "\n" from the buffer
             fgets(remove_name, NAME_MAX, stdin);
@@ -235,7 +237,7 @@ void addname(struct NameCard card[MAX], int items, int id, char p_name[NAME_MAX]
             }
         }
     }
-    printf("The name card has been added succussfully\n");
+    printf("The name card has been added successfully\n");
     return;
 }
 void removename(struct NameCard card[MAX], char p_name[NAME_MAX], int item_count, int index)
